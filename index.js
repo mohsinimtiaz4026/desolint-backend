@@ -13,6 +13,9 @@ app.use(cors());
 app.use(express.json());
 
 // routes
+app.use('/',(req,res) => {
+    res.send("I'm Listening");
+});
 app.use('/api', require("./routers/index"));
 app.use('/uploads', express.static('uploads'));
 
