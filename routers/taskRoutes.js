@@ -3,7 +3,7 @@ const multer = require("multer");
 // controllers
 const taskController = require("../controllers/taskController");
 
-const UPLOAD_FILES_DIR = "./uploads";
+const UPLOAD_FILES_DIR = "./uploads/";
 const storage = multer.diskStorage({
   destination(req, file, cb) {
     cb(null, UPLOAD_FILES_DIR);

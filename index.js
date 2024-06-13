@@ -1,10 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require('cors');
+const morgan = require("morgan");
 const app = express();
 
 // database configure
 require("./config");
+
+app.use(morgan("dev"));
 
 // cross platform compatibility
 app.use(cors());
