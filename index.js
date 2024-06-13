@@ -12,10 +12,11 @@ app.use(cors());
 // body-parser
 app.use(express.json());
 
-// routes
-app.use('/',(req,res) => {
-    res.send("I'm Listening");
-});
+app.use((req, res, next) => {
+    res.status(200).setHeader("Content-Type", "text/html");
+    res.end("<hmtl><body><h1>Express Server</h1></body></hmtl>");
+  });
+//   routes
 app.use('/api', require("./routers/index"));
 app.use('/uploads', express.static('uploads'));
 
